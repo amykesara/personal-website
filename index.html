@@ -540,6 +540,72 @@
   .social-item:hover svg { opacity: 1; }
   .social-name { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; }
 
+  /* EDUCATION TIMELINE */
+  .timeline {
+    position: relative;
+    max-width: 680px;
+    margin: 3rem auto 0;
+    padding-left: 2rem;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.4rem;
+    bottom: 0.4rem;
+    width: 1px;
+    background: var(--sand);
+  }
+
+  .timeline-item {
+    position: relative;
+    padding-left: 2.5rem;
+    padding-bottom: 3rem;
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.3rem;
+    top: 0.45rem;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--ink);
+  }
+
+  .timeline-item.ongoing::before {
+    background: var(--white);
+    border: 1.5px solid var(--ink);
+  }
+
+  .timeline-year {
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--stone);
+    margin-bottom: 0.4rem;
+  }
+
+  .timeline-degree {
+    font-family: 'Cormorant', Georgia, serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--ink);
+    margin-bottom: 0.2rem;
+  }
+
+  .timeline-school {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    color: var(--ink-muted);
+  }
+
   /* CONTACT */
   #contact {
     background: var(--parchment);
@@ -667,7 +733,7 @@
     <li><a href="#about">About</a></li>
     <li><a href="#performances">Performances</a></li>
     <li><a href="#photos">Gallery</a></li>
-    <li><a href="#contact">Contact</a></li>
+<li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -701,6 +767,23 @@
     <p>Kesara's artistry has been shaped through masterclasses and collaborations with musicians such as Midori Goto, Yo-Yo Ma, Michael Tilson Thomas, Zuill Bailey, Gustav Rivinius, Daniel Rowland, and Richard Lester. In 2025, she graduated from the Royal College of Music with a master's degree, studying with acclaimed cellist Alexander Boyarsky. Most recently, she won first prize in the San Francisco International Young Artist Competition in November 2025.</p>
     <p>Beyond her solo career, Kesara is a founding member of the Asterios Trio, who has been invited to perform at prestigious venues including the Royal Albert Hall, St James's Piccadilly, and the Banstead Arts Festival. She is also passionate about historical performance, studying Baroque Cello and Viola da Gamba with Elisabeth Reed and having worked with Jérôme Hantaï.</p>
     <p>In addition to her performance career, Kesara is actively involved in performance science research through her master's research at the Centre for Performance Science, a collaboration between the Royal College of Music and Imperial College London. Her recent research explores the effects of immersive simulation on classical musicians.</p>
+    <div class="timeline" style="margin-top: 3rem;">
+      <div class="timeline-item">
+        <p class="timeline-year">2019 – 2023</p>
+        <p class="timeline-degree">Bachelor of Music</p>
+        <p class="timeline-school">San Francisco Conservatory of Music</p>
+      </div>
+      <div class="timeline-item">
+        <p class="timeline-year">2023 – 2025</p>
+        <p class="timeline-degree">Master of Music</p>
+        <p class="timeline-school">Royal College of Music, London</p>
+      </div>
+      <div class="timeline-item ongoing">
+        <p class="timeline-year">2025 – Present</p>
+        <p class="timeline-degree">Master of Computer Science</p>
+        <p class="timeline-school">City St George, University of London</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -794,6 +877,7 @@
   </div>
   <div class="slideshow-dots" id="slideshow-dots"></div>
 </section>
+
 
 <!-- LINKEDIN -->
 <section id="linkedin" style="background: var(--white); padding: 5rem 4rem; text-align: center; border-top: 1px solid var(--sand);">
@@ -890,15 +974,12 @@
     }
   }, { passive: true });
 
-  const photosSection = document.getElementById('photos');
-  if (photosSection) {
-    const photosObserver = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        photosSection.classList.add('visible');
-        photosObserver.disconnect();
-      }
+  const photosEl = document.getElementById('photos');
+  if (photosEl) {
+    const obs = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) { photosEl.classList.add('visible'); obs.disconnect(); }
     }, { threshold: 0.1 });
-    photosObserver.observe(photosSection);
+    obs.observe(photosEl);
   }
 
   const aboutImg = document.querySelector('.about-img');
