@@ -3,10 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="v9y_tBxcDH6PgUb_LY-F-bzTEuDuJqyWkblOEzYXFtk" />
 <title>Kesara Bunayamongkol — Cellist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
 
 <!-- JSON-LD structured data for Google Knowledge Panel -->
 <script type="application/ld+json">
@@ -46,14 +45,14 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --ink: #0A0A0A;
-    --ink-mid: #222222;
-    --ink-muted: #666666;
-    --stone: #AAAAAA;
-    --parchment: #F2F2F2;
-    --sand: #E0E0E0;
-    --white: #FFFFFF;
-    --earth: #444444;
+    --ink: #111110;
+    --ink-mid: #3A3835;
+    --ink-muted: #7A7670;
+    --stone: #B8B0A4;
+    --parchment: #EDE8E0;
+    --sand: #D6CEC2;
+    --white: #FAF9F7;
+    --earth: #8B7355;
   }
 
   html { scroll-behavior: smooth; }
@@ -103,65 +102,54 @@
 
   /* HERO */
   .hero {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    padding-top: 64px;
   }
 
-  .hero-bg {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center top;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.05) 40%, rgba(0,0,0,0.55) 100%);
-  }
-
-  .hero-content {
-    position: absolute;
-    bottom: 4rem;
-    left: 0;
-    right: 0;
-    text-align: center;
-    padding: 0 2rem;
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 5rem 4rem 5rem 4rem;
+    border-right: 1px solid var(--sand);
   }
 
   .hero-eyebrow {
-    font-size: 0.6rem;
-    letter-spacing: 0.35em;
+    font-size: 0.62rem;
+    letter-spacing: 0.32em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.92);
-    margin-top: 0.75rem;
+    color: var(--earth);
     margin-bottom: 2rem;
-    text-align: center;
   }
 
   .hero-name {
     font-family: 'Cormorant', Georgia, serif;
-    font-size: clamp(2.2rem, 4vw, 4.5rem);
-    font-weight: 500;
-    line-height: 1.1;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
+    font-size: clamp(3.5rem, 5vw, 5.5rem);
+    font-weight: 300;
+    line-height: 0.95;
+    color: var(--ink);
+    margin-bottom: 3rem;
   }
 
-  .hero-name span {
+  .hero-name em {
     display: block;
-    font-style: normal;
-    color: #ffffff;
+    font-style: italic;
+    color: var(--ink-mid);
   }
 
-  .hero-rule { width: 30px; height: 1px; background: rgba(255,255,255,0.4); margin: 0 auto 1.5rem; }
+  .hero-rule { width: 40px; height: 1px; background: var(--earth); margin-bottom: 2rem; }
 
-  .hero-cta { display: flex; gap: 1rem; justify-content: center; }
+  .hero-desc {
+    font-size: 0.88rem;
+    line-height: 1.85;
+    color: var(--ink-muted);
+    max-width: 360px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta { display: flex; gap: 1rem; }
 
   .btn {
     display: inline-block;
@@ -177,10 +165,61 @@
     font-family: inherit;
   }
 
-  .btn-dark { background: rgba(255,255,255,0.9); color: var(--ink); }
-  .btn-dark:hover { background: #ffffff; }
-  .btn-ghost { background: transparent; color: #ffffff; border: 1px solid rgba(255,255,255,0.4); }
-  .btn-ghost:hover { border-color: rgba(255,255,255,0.9); }
+  .btn-dark { background: var(--ink); color: var(--white); }
+  .btn-dark:hover { background: var(--ink-mid); }
+  .btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--sand); }
+  .btn-ghost:hover { border-color: var(--ink); }
+
+  .hero-right {
+    background: var(--parchment);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    min-height: 500px;
+  }
+
+  .hero-photo {
+    width: 260px;
+    height: 340px;
+    object-fit: cover;
+    display: block;
+    position: relative;
+  }
+
+  .hero-photo-placeholder {
+    width: 260px;
+    height: 340px;
+    background: var(--sand);
+    border: 1px solid var(--stone);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--stone);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .hero-right-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--stone);
+  }
+
+  .hero-index {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    font-size: 0.58rem;
+    letter-spacing: 0.15em;
+    color: var(--stone);
+    writing-mode: vertical-rl;
+  }
 
   /* SECTIONS */
   .section-meta {
@@ -231,23 +270,6 @@
     aspect-ratio: 3/4;
     object-fit: cover;
     display: block;
-    opacity: 0;
-    transition: opacity 2s ease;
-  }
-
-  .about-img.visible {
-    opacity: 1;
-  }
-
-  #photos {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1.2s ease, transform 1.2s ease;
-  }
-
-  #photos.visible {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   .about-img-placeholder {
@@ -263,6 +285,13 @@
     letter-spacing: 0.1em;
   }
 
+  .about-img-wrap::after {
+    content: '';
+    position: absolute;
+    top: 14px; left: 14px; right: -14px; bottom: -14px;
+    border: 1px solid var(--parchment);
+    pointer-events: none;
+  }
 
   .about-body p {
     font-size: 0.95rem;
@@ -353,165 +382,59 @@
     color: rgba(255,255,255,0.22);
   }
 
-  /* PERFORMANCES */
-  #performances {
-    background: var(--white);
-    padding: 7rem 4rem;
-  }
-
-  .perf-list {
-    border-top: 1px solid var(--sand);
-  }
-
-  .perf-item {
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    padding: 2rem 0;
-    border-bottom: 1px solid var(--sand);
-  }
-
-  .perf-date {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-width: 52px;
-  }
-
-  .perf-month {
-    font-size: 0.58rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--earth);
-  }
-
-  .perf-day {
-    font-family: 'Cormorant', Georgia, serif;
-    font-size: 2rem;
-    font-weight: 300;
-    color: var(--ink);
-    line-height: 1;
-  }
-
-  .perf-details { flex: 1; }
-
-  .perf-title {
-    font-size: 0.95rem;
-    color: var(--ink);
-    margin-bottom: 0.3rem;
-  }
-
-  .perf-venue {
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
-    color: var(--ink-muted);
-  }
-
-  .perf-tag {
-    font-size: 0.58rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--stone);
-    border: 1px solid var(--sand);
-    padding: 0.4rem 0.9rem;
-  }
-
-  .perf-empty {
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    color: var(--stone);
-    margin-top: 2rem;
-    display: none;
-  }
-
   /* PHOTOS */
   #photos { background: var(--parchment); padding: 7rem 4rem; }
 
-  /* SLIDESHOW */
-  .slideshow-outer {
+  .photo-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 280px 280px;
+    gap: 2px;
+    background: var(--sand);
+  }
+
+  .photo-cell {
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     position: relative;
   }
 
-  .slideshow {
-    display: flex;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    gap: 16px;
-    padding: 0 11%;
-    box-sizing: border-box;
-    height: 620px;
-    align-items: center;
-  }
-
-  .slideshow::-webkit-scrollbar { display: none; }
-
-  .slide {
-    flex: 0 0 78%;
+  .photo-cell img {
+    width: 100%;
     height: 100%;
-    scroll-snap-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--parchment);
-    opacity: 0.35;
-    transition: opacity 0.6s ease;
-  }
-
-  .slide.active {
-    opacity: 1;
-  }
-
-  .slide img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
   }
 
-  .slideshow-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255,255,255,0.8);
-    border: none;
-    cursor: pointer;
-    width: 40px;
-    height: 40px;
+  .photo-cell.span2 { grid-row: span 2; background: var(--parchment); }
+
+  .photo-placeholder {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--ink);
-    font-size: 1rem;
-    transition: background 0.2s;
-    z-index: 10;
-  }
-
-  .slideshow-btn:hover { background: white; }
-  .slideshow-btn.prev { left: 1rem; }
-  .slideshow-btn.next { right: 1rem; }
-
-  .slideshow-dots {
-    display: flex;
-    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--stone);
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
     gap: 0.5rem;
-    margin-top: 1.5rem;
   }
 
-  .dot {
-    width: 5px;
-    height: 5px;
-    border-radius: 50%;
-    background: var(--sand);
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    transition: background 0.3s;
+  .photo-cell-cap {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-family: 'Cormorant', Georgia, serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    color: var(--ink-muted);
+    background: rgba(250,249,247,0.85);
+    padding: 0.2rem 0.5rem;
   }
-
-  .dot.active { background: var(--ink); }
 
   /* SOCIAL */
   #social { background: var(--white); text-align: center; padding: 6rem 4rem; }
@@ -540,72 +463,6 @@
   .social-item svg { width: 20px; height: 20px; opacity: 0.5; transition: opacity 0.25s; }
   .social-item:hover svg { opacity: 1; }
   .social-name { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; }
-
-  /* EDUCATION TIMELINE */
-  .timeline {
-    position: relative;
-    max-width: 680px;
-    margin: 3rem auto 0;
-    padding-left: 2rem;
-  }
-
-  .timeline::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 0.4rem;
-    bottom: 0.4rem;
-    width: 1px;
-    background: var(--sand);
-  }
-
-  .timeline-item {
-    position: relative;
-    padding-left: 2.5rem;
-    padding-bottom: 3rem;
-  }
-
-  .timeline-item:last-child {
-    padding-bottom: 0;
-  }
-
-  .timeline-item::before {
-    content: '';
-    position: absolute;
-    left: -0.3rem;
-    top: 0.45rem;
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--ink);
-  }
-
-  .timeline-item.ongoing::before {
-    background: var(--white);
-    border: 1.5px solid var(--ink);
-  }
-
-  .timeline-year {
-    font-size: 0.58rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--stone);
-    margin-bottom: 0.4rem;
-  }
-
-  .timeline-degree {
-    font-family: 'Cormorant', Georgia, serif;
-    font-size: 1.25rem;
-    font-weight: 400;
-    color: var(--ink);
-    margin-bottom: 0.2rem;
-  }
-
-  .timeline-school {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    color: var(--ink-muted);
-  }
 
   /* CONTACT */
   #contact {
@@ -695,22 +552,19 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-
-  .hero-eyebrow { animation: fadeUp 0.8s ease both; }
-  .hero-name    { animation: fadeIn 1.8s 0.2s ease both; }
-  .hero-rule    { animation: fadeUp 0.8s 0.6s ease both; }
-  .hero-desc    { animation: fadeUp 0.8s 0.8s ease both; }
-  .hero-cta     { animation: fadeUp 0.8s 1s ease both; }
+  .hero-eyebrow { animation: fadeUp 0.7s ease both; }
+  .hero-name    { animation: fadeUp 0.7s 0.1s ease both; }
+  .hero-rule    { animation: fadeUp 0.7s 0.2s ease both; }
+  .hero-desc    { animation: fadeUp 0.7s 0.3s ease both; }
+  .hero-cta     { animation: fadeUp 0.7s 0.4s ease both; }
 
   /* RESPONSIVE */
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
-    .hero-content { bottom: 2.5rem; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 4rem 1.5rem 3rem; }
+    .hero-right { min-height: 320px; }
     #about { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
     #press { padding: 4rem 1.5rem; }
     .press-grid { grid-template-columns: 1fr; }
@@ -732,31 +586,38 @@
   <a href="#" class="nav-logo">Kesara Bunayamongkol</a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#performances">Performances</a></li>
-    <li><a href="#photos">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
+    <li><a href="#press">Press</a></li>
+    <li><a href="#photos">Photos</a></li>
+    <li><a href="#social">Follow</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <div class="hero">
-  <img src="photos/performance-2.jpg.PNG" class="hero-bg" alt="Kesara Bunayamongkol">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <h1 class="hero-name">Kesara<span>Bunayamongkol</span></h1>
-    <p class="hero-eyebrow">Cellist</p>
+  <div class="hero-left">
+    <p class="hero-eyebrow">Cellist &nbsp;·&nbsp; Chamber Musician</p>
+    <h1 class="hero-name">Kesara<em>Bunayamongkol</em></h1>
+    <div class="hero-rule"></div>
+    <p class="hero-desc">A rising Thai cellist and founding member of the Asterios Trio. Master of Music student at the Royal College of Music, London, studying under Alexander Boyarsky.</p>
     <div class="hero-cta">
       <a href="#about" class="btn btn-dark">Discover</a>
       <a href="#contact" class="btn btn-ghost">Contact</a>
     </div>
+  </div>
+  <div class="hero-right">
+    <!-- REPLACE: swap the div below with <img src="your-photo.jpg" class="hero-photo" alt="Kesara Bunayamongkol"> -->
+    <div class="hero-photo-placeholder">Your photo here</div>
+    <p class="hero-right-label">Royal College of Music · London</p>
+    <p class="hero-index">Est. 2001</p>
   </div>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
   <div class="about-img-wrap">
-    <img src="photos/IMG_2032.JPG" class="about-img" alt="Kesara Bunayamongkol">
-    <img src="photos/portrait-bw-2.jpg" class="about-img" alt="Kesara Bunayamongkol" style="margin-top: 1rem;">
+    <!-- REPLACE: swap the div below with <img src="your-portrait.jpg" class="about-img" alt="Kesara Bunayamongkol"> -->
+    <div class="about-img-placeholder">Your portrait here</div>
   </div>
   <div class="about-body">
     <div class="section-meta">
@@ -764,95 +625,53 @@
       <div class="section-rule"></div>
       <span class="section-tag">About</span>
     </div>
-    <h2 class="section-h">Biography</h2>
-    <p>Kesara Bunayamongkol, born in 2001, began her cello journey at the age of seven and quickly became a rising figure in the classical music scene. In 2015, she earned a prestigious scholarship to study in the Virtuoso Program with the Orchestra da Camera in the United States of America. This opportunity launched her onto an inspiring path that later led to a scholarship for her Bachelor's degree at the San Francisco Conservatory of Music, where she studied under the world-renowned French cellist and pedagogue Jean-Michel Fonteneau.</p>
-    <p>Kesara's artistry has been shaped through masterclasses and collaborations with musicians such as Midori Goto, Yo-Yo Ma, Michael Tilson Thomas, Zuill Bailey, Gustav Rivinius, Daniel Rowland, and Richard Lester. In 2025, she graduated from the Royal College of Music with a master's degree, studying with acclaimed cellist Alexander Boyarsky. Most recently, she won first prize in the San Francisco International Young Artist Competition in November 2025.</p>
-    <p>Beyond her solo career, Kesara is a founding member of the Asterios Trio, who has been invited to perform at prestigious venues including the Royal Albert Hall, St James's Piccadilly, and the Banstead Arts Festival. She is also passionate about historical performance, studying Baroque Cello and Viola da Gamba with Elisabeth Reed and having worked with Jérôme Hantaï.</p>
-    <p>In addition to her performance career, Kesara is actively involved in performance science research through her master's research at the Centre for Performance Science, a collaboration between the Royal College of Music and Imperial College London. Her recent research explores the effects of immersive simulation on classical musicians.</p>
-    <div class="timeline" style="margin-top: 3rem;">
-      <div class="timeline-item">
-        <p class="timeline-year">2019 – 2023</p>
-        <p class="timeline-degree">Bachelor of Music</p>
-        <p class="timeline-school">San Francisco Conservatory of Music</p>
+    <h2 class="section-h">A voice<br><em>in the cello</em></h2>
+    <p>Kesara Bunayamongkol is a Thai cellist whose musical journey began at the age of seven. A scholarship recipient at the San Francisco Conservatory of Music, she is now pursuing her Master of Music at the Royal College of Music in London under the tutelage of Alexander Boyarsky.</p>
+    <p>As a founding member of the Asterios Piano Trio, she has performed at some of the world's most celebrated stages — bringing together precision, passion, and a deep commitment to classical chamber music.</p>
+    <div class="facts">
+      <div class="fact">
+        <div class="fact-label">Education</div>
+        <div class="fact-val">Royal College of Music, London</div>
       </div>
-      <div class="timeline-item">
-        <p class="timeline-year">2023 – 2025</p>
-        <p class="timeline-degree">Master of Music</p>
-        <p class="timeline-school">Royal College of Music, London</p>
+      <div class="fact">
+        <div class="fact-label">Ensemble</div>
+        <div class="fact-val">Asterios Piano Trio</div>
       </div>
-      <div class="timeline-item ongoing">
-        <p class="timeline-year">2025 – Present</p>
-        <p class="timeline-degree">Master of Computer Science</p>
-        <p class="timeline-school">City St George, University of London</p>
+      <div class="fact">
+        <div class="fact-label">Studies under</div>
+        <div class="fact-val">Alexander Boyarsky</div>
+      </div>
+      <div class="fact">
+        <div class="fact-label">Award</div>
+        <div class="fact-val">SFIYAMC 2025 — 1st Place</div>
       </div>
     </div>
   </div>
 </section>
 
-
-<!-- PERFORMANCES -->
-<section id="performances">
+<!-- PRESS -->
+<section id="press">
   <div class="section-meta">
     <span class="section-num">02</span>
     <div class="section-rule"></div>
-    <span class="section-tag">Upcoming Performances</span>
+    <span class="section-tag">Press & Achievements</span>
   </div>
-  <h2 class="section-h">Upcoming Performances</h2>
-  <div class="perf-list">
-    <div class="perf-item">
-      <div class="perf-date">
-        <span class="perf-month">May</span>
-        <span class="perf-day">26</span>
-      </div>
-      <div class="perf-details">
-        <p class="perf-title">Brahms Double Concerto & String Sextet</p>
-        <p class="perf-venue">Elder Blossom Hua Hin Theater &nbsp;·&nbsp; Hua Hin, Thailand &nbsp;·&nbsp; 17:00</p>
-      </div>
-      <div class="perf-tag">Concert</div>
+  <h2 class="section-h">Recognition</h2>
+  <div class="press-grid">
+    <div class="press-item">
+      <span class="press-tag">Award · 2025</span>
+      <p class="press-text">"1st Award, Professional Artist Division — Asterios Piano Trio"</p>
+      <p class="press-source">SFIYAMC Competition</p>
     </div>
-    <div class="perf-item">
-      <div class="perf-date">
-        <span class="perf-month">May</span>
-        <span class="perf-day">27</span>
-      </div>
-      <div class="perf-details">
-        <p class="perf-title">Brahms Double Concerto & String Sextet</p>
-        <p class="perf-venue">Goethe Saal &nbsp;·&nbsp; Bangkok, Thailand &nbsp;·&nbsp; 18:00</p>
-      </div>
-      <div class="perf-tag">Concert</div>
+    <div class="press-item">
+      <span class="press-tag">Education</span>
+      <p class="press-text">"Scholarship recipient studying under Alexander Boyarsky at the Royal College of Music."</p>
+      <p class="press-source">Royal College of Music · London</p>
     </div>
-    <div class="perf-item">
-      <div class="perf-date">
-        <span class="perf-month">May</span>
-        <span class="perf-day">29</span>
-      </div>
-      <div class="perf-details">
-        <p class="perf-title">Brahms Double Concerto & String Sextet</p>
-        <p class="perf-venue">Cape Dara Resort &nbsp;·&nbsp; Pattaya, Thailand &nbsp;·&nbsp; TBA</p>
-      </div>
-      <div class="perf-tag">Concert</div>
-    </div>
-    <div class="perf-item">
-      <div class="perf-date">
-        <span class="perf-month">Jul</span>
-        <span class="perf-day">11</span>
-      </div>
-      <div class="perf-details">
-        <p class="perf-title">Schumann Piano Quartet Op.47 &nbsp;·&nbsp; Brahms Piano Quartet Op.25</p>
-        <p class="perf-venue">Chiang Rai, Thailand &nbsp;·&nbsp; TBA</p>
-      </div>
-      <div class="perf-tag">Concert</div>
-    </div>
-    <div class="perf-item">
-      <div class="perf-date">
-        <span class="perf-month">Jul</span>
-        <span class="perf-day">18</span>
-      </div>
-      <div class="perf-details">
-        <p class="perf-title">Schumann Piano Quartet Op.47 &nbsp;·&nbsp; Brahms Piano Quartet Op.25</p>
-        <p class="perf-venue">140 Wireless &nbsp;·&nbsp; Bangkok, Thailand &nbsp;·&nbsp; 16:00</p>
-      </div>
-      <div class="perf-tag">Concert</div>
+    <div class="press-item">
+      <span class="press-tag">Feature · 2025</span>
+      <p class="press-text">"A rising Thai cellist recognised for her work in classical chamber music."</p>
+      <p class="press-source">Google · 2025</p>
     </div>
   </div>
 </section>
@@ -864,29 +683,61 @@
     <div class="section-rule"></div>
     <span class="section-tag">Gallery</span>
   </div>
-  <div class="slideshow-outer">
-    <div class="slideshow" id="slideshow">
-      <div class="slide"><img src="photos/portrait-1.jpg.JPG" alt="Kesara Bunayamongkol"></div>
-      <div class="slide"><img src="photos/portrait-bw-seated.jpg" alt="Kesara Bunayamongkol"></div>
-      <div class="slide"><img src="photos/performance-1.jpg" alt="Kesara Bunayamongkol performing"></div>
-      <div class="slide"><img src="photos/asterios-trio.jpg" alt="Asterios Trio"></div>
-      <div class="slide"><img src="photos/IMG_2032.JPG" alt="Kesara Bunayamongkol"></div>
-      <div class="slide"><img src="photos/IMG_2043.jpg" alt="Kesara Bunayamongkol"></div>
-      <div class="slide"><img src="photos/IMG_3636.JPG" alt="Kesara Bunayamongkol"></div>
+  <h2 class="section-h">In the frame</h2>
+  <div class="photo-grid">
+    <!-- REPLACE each placeholder div with: <img src="photo.jpg" alt="description"> inside .photo-cell -->
+    <div class="photo-cell span2">
+      <div class="photo-placeholder"><span>Performance photo</span></div>
+      <div class="photo-cell-cap">On stage</div>
     </div>
-    <button class="slideshow-btn prev" onclick="changeSlide(-1)">&#8592;</button>
-    <button class="slideshow-btn next" onclick="changeSlide(1)">&#8594;</button>
+    <div class="photo-cell">
+      <div class="photo-placeholder"><span>Portrait</span></div>
+      <div class="photo-cell-cap">Studio</div>
+    </div>
+    <div class="photo-cell">
+      <div class="photo-placeholder"><span>Asterios Trio</span></div>
+      <div class="photo-cell-cap">Ensemble</div>
+    </div>
+    <div class="photo-cell">
+      <div class="photo-placeholder"><span>RCM</span></div>
+      <div class="photo-cell-cap">London</div>
+    </div>
+    <div class="photo-cell">
+      <div class="photo-placeholder"><span>SFIYAMC 2025</span></div>
+      <div class="photo-cell-cap">Competition</div>
+    </div>
   </div>
-  <div class="slideshow-dots" id="slideshow-dots"></div>
 </section>
 
-
-<!-- LINKEDIN -->
-<section id="linkedin" style="background: var(--white); padding: 5rem 4rem; text-align: center; border-top: 1px solid var(--sand);">
-  <a href="https://www.linkedin.com/in/amybunayamongkol" target="_blank" rel="noopener" style="display: inline-flex; align-items: center; gap: 0.8rem; font-size: 0.65rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ink-muted); text-decoration: none; border: 1px solid var(--sand); padding: 1rem 2rem; transition: all 0.25s;">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-    LinkedIn
-  </a>
+<!-- SOCIAL -->
+<section id="social">
+  <div class="section-meta" style="justify-content:center">
+    <span class="section-num">04</span>
+    <div class="section-rule" style="max-width:60px"></div>
+    <span class="section-tag">Follow</span>
+  </div>
+  <h2 class="section-h" style="font-size:2rem">Follow the journey</h2>
+  <!-- REPLACE each href="#" with your actual profile links -->
+  <div>
+    <div class="social-row">
+      <a href="https://www.instagram.com/YOUR_HANDLE" class="social-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        <span class="social-name">Instagram</span>
+      </a>
+      <a href="https://www.facebook.com/YOUR_PAGE" class="social-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        <span class="social-name">Facebook</span>
+      </a>
+      <a href="https://www.linkedin.com/in/YOUR_PROFILE" class="social-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <span class="social-name">LinkedIn</span>
+      </a>
+      <a href="https://www.youtube.com/@YOUR_CHANNEL" class="social-item" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+        <span class="social-name">YouTube</span>
+      </a>
+    </div>
+  </div>
 </section>
 
 <!-- CONTACT -->
@@ -899,11 +750,11 @@
     </div>
     <h2 class="section-h">Let's<br><em>connect</em></h2>
     <p>Whether you're interested in booking a performance, arranging lessons, or simply want to reach out — I'd love to hear from you.</p>
-    <p class="contact-location">Bangkok &nbsp;·&nbsp; London &nbsp;·&nbsp; San Francisco</p>
+    <p class="contact-location">Based in London &nbsp;·&nbsp; Available internationally</p>
   </div>
   <div>
     <!-- NOTE: To make this form actually send emails, sign up at formspree.io and replace action="#" with your Formspree endpoint -->
-    <form class="form" action="https://formspree.io/f/xgodbdvz" method="POST">
+    <form class="form" action="#" method="POST" onsubmit="handleForm(event)">
       <div class="field">
         <label for="fn">Your name</label>
         <input type="text" id="fn" name="name" placeholder="Full name" required>
@@ -935,65 +786,6 @@
 </footer>
 
 <script>
-  // Slideshow
-  let currentSlide = 0;
-  const track = document.getElementById('slideshow-track');
-  const slides = track ? track.querySelectorAll('.slide') : [];
-  const dotsContainer = document.getElementById('slideshow-dots');
-
-  const ss = document.getElementById('slideshow');
-  const ssSlides = ss ? ss.querySelectorAll('.slide') : [];
-
-  if (ssSlides.length) ssSlides[0].classList.add('active');
-
-  ssSlides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'dot' + (i === 0 ? ' active' : '');
-    dot.onclick = () => goToSlide(i);
-    dotsContainer.appendChild(dot);
-  });
-
-  function goToSlide(n) {
-    currentSlide = (n + ssSlides.length) % ssSlides.length;
-    const slideW = ssSlides[0].offsetWidth + 16;
-    const peek = ss.offsetWidth * 0.11;
-    ss.scrollTo({ left: currentSlide * slideW - peek, behavior: 'smooth' });
-    ssSlides.forEach((s, i) => s.classList.toggle('active', i === currentSlide));
-    dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-  }
-
-  function changeSlide(dir) { goToSlide(currentSlide + dir); }
-
-  // Update active slide on manual swipe
-  ss && ss.addEventListener('scroll', () => {
-    const slideW = ssSlides[0] ? ssSlides[0].offsetWidth + 16 : 1;
-    const peek = ss.offsetWidth * 0.11;
-    const idx = Math.round((ss.scrollLeft + peek) / slideW);
-    if (idx !== currentSlide && idx >= 0 && idx < ssSlides.length) {
-      currentSlide = idx;
-      ssSlides.forEach((s, i) => s.classList.toggle('active', i === currentSlide));
-      dotsContainer.querySelectorAll('.dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
-    }
-  }, { passive: true });
-
-  const photosEl = document.getElementById('photos');
-  if (photosEl) {
-    const obs = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) { photosEl.classList.add('visible'); obs.disconnect(); }
-    }, { threshold: 0.1 });
-    obs.observe(photosEl);
-  }
-
-  document.querySelectorAll('.about-img').forEach(img => {
-    const observer = new IntersectionObserver(([entry]) => {
-      if (entry.isIntersecting) {
-        img.classList.add('visible');
-        observer.disconnect();
-      }
-    }, { threshold: 0.2 });
-    observer.observe(img);
-  });
-
   function handleForm(e) {
     e.preventDefault();
     document.getElementById('form-ok').style.display = 'block';
