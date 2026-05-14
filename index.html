@@ -755,6 +755,7 @@
 <section id="about">
   <div class="about-img-wrap">
     <img src="photos/portrait-bw-2.jpg" class="about-img" alt="Kesara Bunayamongkol">
+    <img src="photos/IMG_2032.JPG" class="about-img" alt="Kesara Bunayamongkol" style="margin-top: 1rem;">
   </div>
   <div class="about-body">
     <div class="section-meta">
@@ -901,7 +902,7 @@
   </div>
   <div>
     <!-- NOTE: To make this form actually send emails, sign up at formspree.io and replace action="#" with your Formspree endpoint -->
-    <form class="form" action="#" method="POST" onsubmit="handleForm(event)">
+    <form class="form" action="https://formspree.io/f/xgodbdvz" method="POST">
       <div class="field">
         <label for="fn">Your name</label>
         <input type="text" id="fn" name="name" placeholder="Full name" required>
@@ -982,16 +983,15 @@
     obs.observe(photosEl);
   }
 
-  const aboutImg = document.querySelector('.about-img');
-  if (aboutImg) {
+  document.querySelectorAll('.about-img').forEach(img => {
     const observer = new IntersectionObserver(([entry]) => {
       if (entry.isIntersecting) {
-        aboutImg.classList.add('visible');
+        img.classList.add('visible');
         observer.disconnect();
       }
     }, { threshold: 0.2 });
-    observer.observe(aboutImg);
-  }
+    observer.observe(img);
+  });
 
   function handleForm(e) {
     e.preventDefault();
