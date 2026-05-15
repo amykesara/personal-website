@@ -356,7 +356,7 @@
   /* PERFORMANCES */
   #performances {
     background: var(--white);
-    padding: 7rem 4rem;
+    padding: 2rem 4rem 7rem;
   }
 
   .perf-list {
@@ -607,6 +607,80 @@
     color: var(--ink-muted);
   }
 
+  /* TEACHING */
+  #teaching {
+    background: var(--white);
+    padding: 2rem 4rem 0;
+  }
+
+  .teaching-flags {
+    display: flex;
+    gap: 3rem;
+    margin: 2rem 0 2.5rem;
+  }
+
+  .teaching-flag-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .flag {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  .flag-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+  }
+
+  .teaching-body p {
+    font-size: 0.95rem;
+    line-height: 1.95;
+    color: var(--ink-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .teaching-schools {
+    margin-top: 2.5rem;
+    border-top: 1px solid var(--sand);
+    padding-top: 2rem;
+  }
+
+  .teaching-schools-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--earth);
+    margin-bottom: 1rem;
+  }
+
+  .schools-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .schools-list li {
+    font-size: 0.88rem;
+    color: var(--ink-muted);
+    letter-spacing: 0.04em;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  .schools-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--stone);
+  }
+
   /* CONTACT */
   #contact {
     background: var(--parchment);
@@ -733,8 +807,10 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#performances">Performances</a></li>
+    <li><a href="#teaching">Teaching</a></li>
+    <li><a href="#performances">Performances</a></li>
     <li><a href="#photos">Gallery</a></li>
-<li><a href="#contact">Contact</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
@@ -744,7 +820,7 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1 class="hero-name">Kesara<span>Bunayamongkol</span></h1>
-    <p class="hero-eyebrow">Cellist</p>
+    <p class="hero-eyebrow">Cellist &nbsp;|&nbsp; Research &nbsp;|&nbsp; Educator</p>
     <div class="hero-cta">
       <a href="#about" class="btn btn-dark">Discover</a>
       <a href="#contact" class="btn btn-ghost">Contact</a>
@@ -790,15 +866,99 @@
 </section>
 
 
+<!-- TEACHING -->
+<section id="teaching">
+  <div class="section-meta">
+    <span class="section-num">02</span>
+    <div class="section-rule"></div>
+    <span class="section-tag">Teaching</span>
+  </div>
+  <h2 class="section-h">Teaching</h2>
+  <div class="teaching-body">
+    <p>With over 10 years of teaching experience, I offer lessons in cello and music theory to students of all ages and levels — from complete beginners to advanced players. My teaching draws on training across three countries and a deep passion for nurturing each student's individual voice and musicality.</p>
+    <p>As a music theory teacher, I bring strong academic credentials to my lessons. I was awarded Top in the Country for both AS Level and A Level Music in the Cambridge International Examinations in 2018 and 2019 respectively — a distinction that reflects my commitment to rigorous musical understanding alongside performance.</p>
+    <p>My students have excelled in competitions globally and consistently achieved high marks in their ABRSM examinations. I tailor each lesson to the student's goals, whether preparing for exams, competitions, or simply developing a lifelong love of music.</p>
+    <p>Lessons are available both online and in person. Please get in touch for more information on availability and pricing.</p>
+    <div class="teaching-flags">
+      <div class="teaching-flag-item">
+        <span class="flag">🇹🇭</span>
+        <span class="flag-label">Thailand</span>
+      </div>
+      <div class="teaching-flag-item">
+        <span class="flag">🇬🇧</span>
+        <span class="flag-label">United Kingdom</span>
+      </div>
+      <div class="teaching-flag-item">
+        <span class="flag">🇺🇸</span>
+        <span class="flag-label">United States</span>
+      </div>
+    </div>
+    <div class="teaching-schools">
+      <p class="teaching-schools-label">Institutions I Have Taught In</p>
+      <ul class="schools-list">
+        <li>King's College International School Bangkok</li>
+        <li>International School Bangkok (ISB)</li>
+        <li>Questors Young Musicians Club, London</li>
+        <li>Harrow International School Bangkok</li>
+        <li>San Francisco Conservatory of Music — Conservatory in the Schools Program</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
 <!-- PERFORMANCES -->
 <section id="performances">
   <div class="section-meta">
     <span class="section-num">02</span>
     <div class="section-rule"></div>
-    <span class="section-tag">Upcoming Performances</span>
+    <span class="section-tag">Performance Calendar 2026</span>
   </div>
-  <h2 class="section-h">Upcoming Performances</h2>
+  <h2 class="section-h">Performance Calendar 2026</h2>
   <div class="perf-list">
+    <div class="perf-item">
+      <div class="perf-date">
+        <span class="perf-month">Jan</span>
+        <span class="perf-day">16</span>
+      </div>
+      <div class="perf-details">
+        <p class="perf-title">Borodin String Quartet No. 2 &nbsp;·&nbsp; Dvořák "American" String Quartet</p>
+        <p class="perf-venue">Cape Dara Resort &nbsp;·&nbsp; Pattaya, Thailand &nbsp;·&nbsp; 18:30</p>
+      </div>
+      <div class="perf-tag">Concert</div>
+    </div>
+    <div class="perf-item">
+      <div class="perf-date">
+        <span class="perf-month">Jan</span>
+        <span class="perf-day">18</span>
+      </div>
+      <div class="perf-details">
+        <p class="perf-title">Borodin String Quartet No. 2 &nbsp;·&nbsp; Dvořák "American" String Quartet</p>
+        <p class="perf-venue">Black Cabin &nbsp;·&nbsp; Bangkok, Thailand &nbsp;·&nbsp; 16:30</p>
+      </div>
+      <div class="perf-tag">Concert</div>
+    </div>
+    <div class="perf-item">
+      <div class="perf-date">
+        <span class="perf-month">Jan</span>
+        <span class="perf-day">23</span>
+      </div>
+      <div class="perf-details">
+        <p class="perf-title">Borodin String Quartet No. 2 &nbsp;·&nbsp; Dvořák "American" String Quartet</p>
+        <p class="perf-venue">Elder Blossom Theatre &nbsp;·&nbsp; Hua Hin, Thailand &nbsp;·&nbsp; 17:00</p>
+      </div>
+      <div class="perf-tag">Concert</div>
+    </div>
+    <div class="perf-item">
+      <div class="perf-date">
+        <span class="perf-month">Mar</span>
+        <span class="perf-day">29</span>
+      </div>
+      <div class="perf-details">
+        <p class="perf-title">Kummer Cello Duet Op.22 No.1 &nbsp;·&nbsp; Barrière Sonata for Two Cellos No.10 &nbsp;·&nbsp; Cassadó Suite for Cello Solo &nbsp;·&nbsp; Elizondo Danzas Latinoamericanas for Two Cellos</p>
+        <p class="perf-venue">Baan Petchburi &nbsp;·&nbsp; Bangkok, Thailand &nbsp;·&nbsp; 19:00</p>
+      </div>
+      <div class="perf-tag">Concert</div>
+    </div>
     <div class="perf-item">
       <div class="perf-date">
         <span class="perf-month">May</span>
