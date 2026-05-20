@@ -224,6 +224,9 @@
     padding: 7rem 4rem;
   }
 
+  .desktop-only { display: block; }
+  .mobile-only { display: none; }
+
   .about-img-wrap { position: relative; }
 
   .about-img {
@@ -848,6 +851,8 @@
     #linkedin { padding: 3rem 1.5rem; }
     #contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
+    .desktop-only { display: none; }
+    .mobile-only { display: block; }
   }
 </style>
 </head>
@@ -894,7 +899,7 @@
 <section id="about">
   <div class="about-img-wrap">
     <img src="photos/IMG_2032.JPG" class="about-img" alt="Kesara Bunayamongkol">
-    <img src="photos/portrait-bw-2.jpg" class="about-img" alt="Kesara Bunayamongkol" style="margin-top: 1rem;">
+    <img src="photos/portrait-bw-2.jpg" class="about-img desktop-only" alt="Kesara Bunayamongkol" style="margin-top: 1rem;">
   </div>
   <div class="about-body">
     <div class="section-meta">
@@ -927,6 +932,10 @@
   </div>
 </section>
 
+<!-- Mobile-only second bio image (shown between About and Teaching on mobile) -->
+<div class="mobile-only" style="padding: 0 1.5rem 2rem;">
+  <img src="photos/portrait-bw-2.jpg" class="about-img" alt="Kesara Bunayamongkol" style="width: 100%;">
+</div>
 
 <!-- TEACHING -->
 <section id="teaching">
