@@ -781,19 +781,70 @@
   .hero-cta     { animation: fadeUp 0.8s 1s ease both; }
 
   /* RESPONSIVE */
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 200;
+  }
+  .hamburger span {
+    display: block;
+    width: 22px;
+    height: 1.5px;
+    background: var(--ink);
+    transition: all 0.3s ease;
+  }
+  .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(250,249,247,0.98);
+    z-index: 150;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.5rem;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a {
+    font-size: 0.75rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+  }
+
   @media (max-width: 768px) {
     nav { padding: 1.2rem 1.5rem; }
     .nav-links { display: none; }
+    .hamburger { display: flex; }
     .hero-content { bottom: 2.5rem; }
-    #about { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
+    .hero-name { font-size: clamp(1.8rem, 8vw, 3rem); }
+    #about { grid-template-columns: 1fr; gap: 2rem; padding: 4rem 1.5rem; }
+    .timeline { padding-left: 1.5rem; }
+    #teaching { padding: 2rem 1.5rem 0; }
+    .teaching-flags { gap: 1.5rem; flex-wrap: wrap; }
+    #performances { padding: 2rem 1.5rem 4rem; }
+    .perf-item { flex-wrap: wrap; gap: 1rem; padding: 1.5rem 0; }
+    .perf-tag { margin-left: auto; }
     #press { padding: 4rem 1.5rem; }
     .press-grid { grid-template-columns: 1fr; }
     .press-item { border-right: none; padding-right: 0; }
     #photos { padding: 4rem 1.5rem; }
-    .photo-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
-    .photo-cell.span2 { grid-column: span 2; grid-row: span 1; min-height: 240px; }
+    .slideshow { height: 380px; padding: 0 5%; }
+    .slide { flex: 0 0 90%; }
     #social { padding: 4rem 1.5rem; }
     .social-row { flex-wrap: wrap; }
+    #linkedin { padding: 3rem 1.5rem; }
     #contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
   }
@@ -811,7 +862,18 @@
     <li><a href="#photos">Gallery</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#teaching" class="mobile-link">Teaching</a>
+  <a href="#performances" class="mobile-link">Performances</a>
+  <a href="#photos" class="mobile-link">Gallery</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+</div>
 
 <!-- HERO -->
 <div class="hero">
@@ -1152,6 +1214,20 @@
       }
     }, { threshold: 0.2 });
     observer.observe(img);
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger && hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu.classList.toggle('open');
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobileMenu.classList.remove('open');
+    });
   });
 
   function handleForm(e) {
