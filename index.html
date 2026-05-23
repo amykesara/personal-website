@@ -280,88 +280,6 @@
     margin-bottom: 1.5rem;
   }
 
-  .facts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    margin-top: 2.5rem;
-    border-top: 1px solid var(--sand);
-  }
-
-  .fact {
-    padding: 1.5rem 2rem 1.5rem 0;
-    border-bottom: 1px solid var(--sand);
-  }
-
-  .fact:nth-child(odd) { border-right: 1px solid var(--sand); }
-
-  .fact-label {
-    font-size: 0.58rem;
-    letter-spacing: 0.25em;
-    text-transform: uppercase;
-    color: var(--earth);
-    margin-bottom: 0.4rem;
-  }
-
-  .fact-val {
-    font-family: 'Cormorant', Georgia, serif;
-    font-size: 1rem;
-    color: var(--ink);
-    font-weight: 400;
-    line-height: 1.4;
-  }
-
-  /* PRESS */
-  #press {
-    background: var(--ink);
-    color: var(--white);
-    padding: 7rem 4rem;
-  }
-
-  #press .section-rule { background: rgba(255,255,255,0.1); }
-  #press .section-num { color: var(--earth); }
-  #press .section-tag { color: rgba(255,255,255,0.3); }
-  #press .section-h { color: var(--white); }
-
-  .press-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .press-item {
-    padding: 2.5rem 2.5rem 2.5rem 0;
-    border-right: 1px solid rgba(255,255,255,0.08);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-
-  .press-item:last-child { border-right: none; }
-
-  .press-tag {
-    font-size: 0.58rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--earth);
-    margin-bottom: 1.2rem;
-    display: block;
-  }
-
-  .press-text {
-    font-family: 'Cormorant', Georgia, serif;
-    font-size: 1.05rem;
-    font-style: italic;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-
-  .press-source {
-    font-size: 0.6rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.22);
-  }
-
   /* PERFORMANCES */
   #performances {
     background: var(--white);
@@ -423,14 +341,6 @@
     color: var(--stone);
     border: 1px solid var(--sand);
     padding: 0.4rem 0.9rem;
-  }
-
-  .perf-empty {
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    color: var(--stone);
-    margin-top: 2rem;
-    display: none;
   }
 
   /* PHOTOS */
@@ -521,34 +431,6 @@
   }
 
   .dot.active { background: var(--ink); }
-
-  /* SOCIAL */
-  #social { background: var(--white); text-align: center; padding: 6rem 4rem; }
-
-  .social-row {
-    display: inline-flex;
-    border: 1px solid var(--sand);
-    margin-top: 3rem;
-  }
-
-  .social-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 2rem 2.5rem;
-    text-decoration: none;
-    color: var(--ink-muted);
-    border-right: 1px solid var(--sand);
-    transition: all 0.25s;
-    min-width: 110px;
-  }
-
-  .social-item:last-child { border-right: none; }
-  .social-item:hover { background: var(--parchment); color: var(--ink); }
-  .social-item svg { width: 20px; height: 20px; opacity: 0.5; transition: opacity 0.25s; }
-  .social-item:hover svg { opacity: 1; }
-  .social-name { font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; }
 
   /* EDUCATION TIMELINE */
   .timeline {
@@ -846,14 +728,9 @@
     #performances { padding: 2rem 1.5rem 4rem; }
     .perf-item { flex-wrap: wrap; gap: 1rem; padding: 1.5rem 0; }
     .perf-tag { margin-left: auto; }
-    #press { padding: 4rem 1.5rem; }
-    .press-grid { grid-template-columns: 1fr; }
-    .press-item { border-right: none; padding-right: 0; }
     #photos { padding: 4rem 1.5rem; }
     .slideshow { height: 380px; padding: 0 5%; }
     .slide { flex: 0 0 90%; }
-    #social { padding: 4rem 1.5rem; }
-    .social-row { flex-wrap: wrap; }
     #linkedin { padding: 3rem 1.5rem; }
     #contact { grid-template-columns: 1fr; gap: 3rem; padding: 4rem 1.5rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; padding: 1.5rem; }
@@ -1175,8 +1052,6 @@
 <script>
   // Slideshow
   let currentSlide = 0;
-  const track = document.getElementById('slideshow-track');
-  const slides = track ? track.querySelectorAll('.slide') : [];
   const dotsContainer = document.getElementById('slideshow-dots');
 
   const ss = document.getElementById('slideshow');
@@ -1246,13 +1121,7 @@
     });
   });
 
-  function handleForm(e) {
-    e.preventDefault();
-    document.getElementById('form-ok').style.display = 'block';
-    ['fn','fe','fs','fm'].forEach(function(id) {
-      document.getElementById(id).value = '';
-    });
-  }
+
 </script>
 
 </body>
